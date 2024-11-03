@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "95143402375",
+    "project_id": "mov-2024b-sw-gr1-mmcc",
+    "storage_bucket": "mov-2024b-sw-gr1-mmcc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95143402375:android:9af4e41d0673e9ce4e5122",
+        "android_client_info": {
+          "package_name": "com.example.sw2024gr1_mmcc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0lRdWj1R6mhdK5XyZt68zTuNVZU2yYls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
