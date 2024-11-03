@@ -45,7 +45,8 @@ fun main(args: Array<String>) {
     calcularSueldo(10.00)
     calcularSueldo(10.00, 15.00, 20.00)
     calcularSueldo(10.00, bonoEspecial = 20.00)
-    calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00)
+    println (calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00));
+
 }
 
 // Función para imprimir el nombre formateado
@@ -104,3 +105,4 @@ class Suma(
 // val sumaInvalida = Suma() // Error: No se han proporcionado los parámetros requeridos
 // Explicación: `Suma` requiere dos parámetros en su constructor (unoParametro y dosParametro).
 // La creación de un objeto sin estos parámetros no es válida.
+
