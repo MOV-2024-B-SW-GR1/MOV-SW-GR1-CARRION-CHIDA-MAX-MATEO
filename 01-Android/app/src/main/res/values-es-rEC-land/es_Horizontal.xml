@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Caso 4: Pantalla apaisada en español -->
+    <string name="saludoTest">Viendo horizontes amplios</string>
+    <color name="saludoColor">#FF5722</color> <!-- Naranja brillante para texto -->
+    <color name="bg_color">#3F51B5</color> <!-- Azul fuerte para fondo -->
+</resources>

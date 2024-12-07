@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Caso 1: Pantalla alta en inglés -->
+    <string name="saludoTest">Welcome to the Future of Tech!</string>
+    <color name="saludoColor">#673AB7</color> <!-- Morado vibrante para texto -->
+    <color name="bg_color">#CDDC39</color> <!-- Lima claro para fondo -->
+</resources>

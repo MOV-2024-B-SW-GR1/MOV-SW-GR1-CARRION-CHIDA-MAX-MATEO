@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Caso 2: Pantalla vertical en español -->
+    <string name="saludoTest">¡Explora el mundo verticalmente!</string>
+    <color name="saludoColor">#009688</color> <!-- Verde esmeralda para texto -->
+    <color name="bg_color">#FF9800</color> <!-- Naranja cálido para fondo -->
+</resources>

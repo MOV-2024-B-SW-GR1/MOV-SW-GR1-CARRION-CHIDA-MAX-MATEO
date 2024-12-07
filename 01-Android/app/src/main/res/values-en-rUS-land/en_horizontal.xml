@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Caso 3: Pantalla ancha en inglés -->
+    <string name="saludoTest">Wide Views for Big Ideas</string>
+    <color name="saludoColor">#4CAF50</color> <!-- Verde brillante para texto -->
+    <color name="bg_color">#D32F2F</color> <!-- Rojo oscuro para fondo -->
+</resources>
