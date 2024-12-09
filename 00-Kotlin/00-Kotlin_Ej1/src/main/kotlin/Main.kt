@@ -4,31 +4,28 @@ import java.util.*
 
 // Punto de entrada de la aplicación
 fun main(args: Array<String>) {
-    // Ejemplo de variable inmutable (val), no se puede reasignar después de inicializar
+    // --------------------
+    // SECCIÓN 1: VARIABLES
+    // --------------------
+
     val inmutable: String = "Max Mateo Carrion Chida"
-    // inmutable = "Otro Nombre" // Error: Val cannot be reassigned
-    // Explicación: La palabra clave `val` declara una variable inmutable, por lo que no puede ser reasignada después de la inicialización.
+    var mutable: String = "Carrion"
+    mutable = "Chida" // Esto es válido
 
-    // Ejemplo de variable mutable (var), se puede reasignar
-    var mutable: String = "Chida"
-    mutable = "Carrion" // Esto es válido
-
-    // Duck Typing en Kotlin (el tipo se infiere automáticamente)
     val ejemploVariable = " Max Mateo Carrion Chida "
     ejemploVariable.trim()
 
     val edadEjemplo: Int = 25
-    // ejemploVariable = edadEjemplo // Error: Type mismatch
-    // Explicación: Intentar asignar un valor de tipo `Int` a una variable de tipo `String` genera un error, ya que Kotlin no permite cambiar el tipo de una variable después de su declaración.
-
-    // Declaración de variables primitivas
     val nombreProfesor: String = "Max Mateo Carrion Chida"
     val sueldo: Double = 1.2
     val estadoCivil: Char = 'C'
     val mayorEdad: Boolean = true
     val fechaNacimiento: Date = Date()
 
-    // Ejemplo de sentencia when (similar a switch en otros lenguajes)
+    // ---------------------
+    // SECCIÓN 2: CONTROL DE FLUJO
+    // ---------------------
+
     val estadoCivilWhen = "C"
     when (estadoCivilWhen) {
         "C" -> println("Casado")
@@ -36,41 +33,77 @@ fun main(args: Array<String>) {
         else -> println("No sabemos")
     }
 
-    // Uso de una expresión if para retornar un valor
     val esSoltero = (estadoCivilWhen == "S")
     val coqueteo = if (esSoltero) "Sí" else "No"
 
-    // Llamadas a funciones con parámetros nombrados y opcionales
+    // ----------------------
+    // SECCIÓN 3: FUNCIONES
+    // ----------------------
+
     imprimirNombre("MaX MaTeO CaRriOn ChiDA")
     calcularSueldo(10.00)
     calcularSueldo(10.00, 15.00, 20.00)
     calcularSueldo(10.00, bonoEspecial = 20.00)
-    println (calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00));
+    println(calcularSueldo(bonoEspecial = 20.00, sueldo = 10.00, tasa = 14.00))
 
+    // ------------------------
+    // SECCIÓN 4: CLASES Y OOP
+    // ------------------------
+
+    val suma = Suma(10, 20)
+    println("Resultado de la suma: ${suma.sumar()}")
+    println("Valor de PI: ${Suma.pi}")
+    println("Historial de sumas: ${Suma.historialSumas}")
+    Suma.agregarHistorial(30)
+    println("Historial actualizado: ${Suma.historialSumas}")
+
+    // ---------------------
+    // SECCIÓN 5: COLECCIONES
+    // ---------------------
+
+    // Declaración de arreglos
+    val arregloEstatico: Array<Int> = arrayOf(1, 2, 3)
+    val arregloDinamico: ArrayList<Int> = arrayListOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+    // forEach: Iterar elementos
+    println("Usando forEach:")
+    arregloDinamico.forEach { println("Valor actual: $it") }
+
+    // map: Crear un nuevo arreglo transformado
+    println("Usando map:")
+    val arregloMapeado = arregloDinamico.map { it * 2 }
+    println("Arreglo mapeado: $arregloMapeado")
+
+    // filter: Filtrar elementos que cumplan una condición
+    println("Usando filter:")
+    val elementosFiltrados = arregloDinamico.filter { it > 5 }
+    println("Elementos filtrados (mayores a 5): $elementosFiltrados")
+
+    // any: ¿Algún elemento cumple la condición?
+    val hayMayoresADiez = arregloDinamico.any { it > 10 }
+    println("¿Hay elementos mayores a 10? $hayMayoresADiez")
+
+    // all: ¿Todos los elementos cumplen la condición?
+    val todosMayoresACinco = arregloDinamico.all { it > 5 }
+    println("¿Todos son mayores a 5? $todosMayoresACinco")
 }
 
-// Función para imprimir el nombre formateado
-fun imprimirNombre(nombre: String): Unit { // El tipo Unit es opcional en funciones que no devuelven valor
-    // Función interna, disponible solo en este contexto (scope)
+// -------------------------
+// FUNCIONES
+// -------------------------
+
+fun imprimirNombre(nombre: String): Unit {
     fun otraFuncionAdentro() {
         println("Otra función interna")
     }
-
-    // Uso de template strings en Kotlin
-    println("Nombre: $nombre")
     println("Nombre: ${nombre.uppercase()}")
-    println("Nombre: $nombre.uppercase()") // Error: No se interpretará el método `uppercase()`
-    // Explicación: Para ejecutar métodos dentro de un template string, es necesario usar `${}`.
-    // Al no poner las llaves, Kotlin trata el método como texto literal en lugar de ejecutarlo.
-
     otraFuncionAdentro()
 }
 
-// Función para calcular el sueldo con parámetros opcionales y nullables
 fun calcularSueldo(
-    sueldo: Double, // Parámetro requerido
-    tasa: Double = 12.00, // Parámetro opcional con valor por defecto
-    bonoEspecial: Double? = null // Parámetro opcional que puede ser nulo
+    sueldo: Double,
+    tasa: Double = 12.00,
+    bonoEspecial: Double? = null
 ): Double {
     return if (bonoEspecial == null) {
         sueldo * (100 / tasa)
@@ -79,19 +112,19 @@ fun calcularSueldo(
     }
 }
 
-// Clases en Kotlin y ejemplos de constructores primarios y herencia
+// -------------------------
+// CLASES Y HERENCIA
+// -------------------------
 
-// Clase base abstracta usando un constructor primario
 abstract class Numeros(
-    protected val numeroUno: Int, // Atributo de la clase (protected, accesible en subclases)
-    protected val numeroDos: Int  // Otro atributo de la clase
+    protected val numeroUno: Int,
+    protected val numeroDos: Int
 ) {
     init {
         println("Inicializando la clase Numeros")
     }
 }
 
-// Clase derivada, que extiende de la clase base Numeros
 class Suma(
     unoParametro: Int,
     dosParametro: Int
@@ -99,10 +132,19 @@ class Suma(
     init {
         println("Inicializando la clase Suma")
     }
+
+    fun sumar(): Int {
+        val total = numeroUno + numeroDos
+        agregarHistorial(total)
+        return total
+    }
+
+    companion object {
+        val pi = 3.14
+        val historialSumas = arrayListOf<Int>()
+
+        fun agregarHistorial(valor: Int) {
+            historialSumas.add(valor)
+        }
+    }
 }
-
-// Ejemplo de uso incorrecto de una clase sin constructor válido
-// val sumaInvalida = Suma() // Error: No se han proporcionado los parámetros requeridos
-// Explicación: `Suma` requiere dos parámetros en su constructor (unoParametro y dosParametro).
-// La creación de un objeto sin estos parámetros no es válida.
-
