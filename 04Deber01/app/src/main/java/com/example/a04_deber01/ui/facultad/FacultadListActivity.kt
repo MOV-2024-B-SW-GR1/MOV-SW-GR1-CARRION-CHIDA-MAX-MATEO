@@ -35,7 +35,6 @@ class FacultadListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         adapter = FacultadAdapter(
             onItemClick = { facultad ->
-                // Ir a la lista de carreras de esta facultad
                 startActivity(
                     CarreraListActivity.newIntent(this, facultad.id)
                 )
@@ -45,17 +44,17 @@ class FacultadListActivity : AppCompatActivity() {
                 refreshData()
             },
             onEditClick = { facultad ->
-                // Mostrar diálogo para editar
                 showUpdateFacultadDialog(
                     context = this,
                     facultad = facultad
-                ) { updatedNombre, updatedUbicacion, updatedFecha ->
-                    // Actualizamos
+                ) { nombre, fechaCreacion, activa, numeroDepartamentos, presupuestoAnual ->
                     viewModel.updateFacultad(
                         facultad.copy(
-                            nombre = updatedNombre,
-                            ubicacion = updatedUbicacion,
-                            fechaCreacion = updatedFecha
+                            nombre = nombre,
+                            fechaCreacion = fechaCreacion,
+                            activa = activa,
+                            numeroDepartamentos = numeroDepartamentos,
+                            presupuestoAnual = presupuestoAnual
                         )
                     )
                     refreshData()
@@ -79,15 +78,17 @@ class FacultadListActivity : AppCompatActivity() {
 
     private fun setupFab() {
         binding.fab.setOnClickListener {
-            // Diálogo para crear nueva facultad
             showFacultadDialog(
                 context = this
-            ) { nombre, ubicacion, fecha ->
+            ) { nombre, fechaCreacion, activa, numeroDepartamentos, presupuestoAnual ->
                 viewModel.insertFacultad(
                     Facultad(
+                        id = 0,
                         nombre = nombre,
-                        ubicacion = ubicacion,
-                        fechaCreacion = fecha
+                        fechaCreacion = fechaCreacion,
+                        activa = activa,
+                        numeroDepartamentos = numeroDepartamentos,
+                        presupuestoAnual = presupuestoAnual
                     )
                 )
                 refreshData()

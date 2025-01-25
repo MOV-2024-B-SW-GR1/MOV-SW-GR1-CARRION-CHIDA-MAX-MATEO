@@ -6,16 +6,13 @@ import com.example.a04_deber01.data.model.Facultad
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-/**
- * Se encarga de la lógica de acceso a datos.
- * Actualmente usa el DataStore en memoria, pero se podría
- * cambiar fácilmente a una BD real (Room, SQLite, etc.).
- */
 class UniversidadRepository {
-
-    // Facultades
-    suspend fun getAllFacultades(): List<Facultad> = withContext(Dispatchers.IO) {
+    suspend fun getAllFacultades() = withContext(Dispatchers.IO) {
         UniversidadDataStore.facultades.toList()
+    }
+
+    suspend fun getCarrerasByFacultad(facultadId: Int) = withContext(Dispatchers.IO) {
+        UniversidadDataStore.facultades.find { it.id == facultadId }?.carreras ?: emptyList()
     }
 
     suspend fun insertFacultad(facultad: Facultad) = withContext(Dispatchers.IO) {
@@ -30,20 +27,15 @@ class UniversidadRepository {
         UniversidadDataStore.deleteFacultad(facultadId)
     }
 
-    // Carreras
-    suspend fun getCarrerasByFacultad(facultadId: Int): List<Carrera> = withContext(Dispatchers.IO) {
-        UniversidadDataStore.carreras.filter { it.facultadId == facultadId }
+    suspend fun insertCarrera(carrera: Carrera, facultadId: Int) = withContext(Dispatchers.IO) {
+        UniversidadDataStore.addCarrera(carrera, facultadId)
     }
 
-    suspend fun insertCarrera(carrera: Carrera) = withContext(Dispatchers.IO) {
-        UniversidadDataStore.addCarrera(carrera)
+    suspend fun updateCarrera(carrera: Carrera, facultadId: Int) = withContext(Dispatchers.IO) {
+        UniversidadDataStore.updateCarrera(carrera, facultadId)
     }
 
-    suspend fun updateCarrera(carrera: Carrera) = withContext(Dispatchers.IO) {
-        UniversidadDataStore.updateCarrera(carrera)
-    }
-
-    suspend fun deleteCarrera(carreraId: Int) = withContext(Dispatchers.IO) {
-        UniversidadDataStore.deleteCarrera(carreraId)
+    suspend fun deleteCarrera(carreraId: Int, facultadId: Int) = withContext(Dispatchers.IO) {
+        UniversidadDataStore.deleteCarrera(carreraId, facultadId)
     }
 }

@@ -18,7 +18,10 @@ class CarreraAdapter(
 
         fun bind(carrera: Carrera) {
             binding.tvNombreCarrera.text = carrera.nombre
-            binding.tvDuracionCarrera.text = "Duración: ${carrera.duracion} años"
+            binding.tvAnioInicio.text = "Año Inicio: ${carrera.anioInicio}"
+            binding.tvAcreditada.text = "Acreditada: ${if (carrera.acreditada) "Sí" else "No"}"
+            binding.tvCreditosTotales.text = "Créditos: ${carrera.creditosTotales}"
+            binding.tvMensualidad.text = "Mensualidad: $${carrera.mensualidad}"
 
             binding.btnDeleteCarrera.setOnClickListener {
                 onDeleteClick(carrera.id)

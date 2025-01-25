@@ -9,4 +9,3 @@
     <color name="error_color">#B00020</color> <!-- Fondo del botón de error -->
     <color name="error_text">#FFFFFF</color> <!-- Texto del botón de error -->
 </resources>
-

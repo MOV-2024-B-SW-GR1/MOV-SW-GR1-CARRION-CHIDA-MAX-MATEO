@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:padding="24dp">
 
+    <!-- Nombre de la Carrera -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,17 +23,55 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Año de Inicio -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:startIconDrawable="@drawable/ic_timer">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etDuracionCarrera"
+            android:id="@+id/etAnioInicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Duración (años)"
+            android:hint="Año de Inicio"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- ¿Está Acreditada? -->
+    <CheckBox
+        android:id="@+id/cbAcreditada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="¿Está Acreditada?" />
+
+    <!-- Créditos Totales -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:startIconDrawable="@drawable/ic_credits">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCreditosTotales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Créditos Totales"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Mensualidad -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_money">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMensualidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mensualidad"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
 </LinearLayout>

@@ -19,18 +19,17 @@ class FacultadAdapter(
 
         fun bind(facultad: Facultad) {
             binding.tvNombre.text = facultad.nombre
-            binding.tvUbicacion.text = facultad.ubicacion
-            binding.tvFecha.text = "Creada: ${facultad.fechaCreacion}"
+            binding.tvFechaCreacion.text = "Fecha Creación: ${facultad.fechaCreacion}"
+            binding.tvActiva.text = "Activa: ${if (facultad.activa) "Sí" else "No"}"
+            binding.tvNumeroDepartamentos.text = "Departamentos: ${facultad.numeroDepartamentos}"
+            binding.tvPresupuesto.text = "Presupuesto: $${facultad.presupuestoAnual}"
 
-            // Navegar a Carreras
             binding.root.setOnClickListener {
                 onItemClick(facultad)
             }
-            // Eliminar Facultad
             binding.btnDelete.setOnClickListener {
                 onDeleteClick(facultad.id)
             }
-            // Editar Facultad
             binding.btnEdit.setOnClickListener {
                 onEditClick(facultad)
             }

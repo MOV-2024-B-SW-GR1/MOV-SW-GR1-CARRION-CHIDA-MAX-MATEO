@@ -37,19 +37,23 @@ class CarreraListActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         adapter = CarreraAdapter(
             onDeleteClick = { carreraId ->
-                viewModel.deleteCarrera(carreraId)
+                viewModel.deleteCarrera(carreraId, facultadId)
                 refreshData()
             },
             onEditClick = { carrera ->
                 showUpdateCarreraDialog(
                     context = this,
                     carrera = carrera
-                ) { newName, newDuracion ->
+                ) { nombre, anioInicio, acreditada, creditosTotales, mensualidad ->
                     viewModel.updateCarrera(
                         carrera.copy(
-                            nombre = newName,
-                            duracion = newDuracion
-                        )
+                            nombre = nombre,
+                            anioInicio = anioInicio,
+                            acreditada = acreditada,
+                            creditosTotales = creditosTotales,
+                            mensualidad = mensualidad
+                        ),
+                        facultadId
                     )
                     refreshData()
                 }
@@ -62,27 +66,31 @@ class CarreraListActivity : AppCompatActivity() {
         refreshData()
     }
 
-    private fun refreshData() {
-        lifecycleScope.launch {
-            val carreras = viewModel.getCarreras()
-            adapter.submitList(carreras)
-        }
-    }
-
     private fun setupFab() {
         binding.fabCarrera.setOnClickListener {
             showCarreraDialog(
                 context = this
-            ) { nombre, duracion ->
+            ) { nombre, anioInicio, acreditada, creditosTotales, mensualidad ->
                 viewModel.insertCarrera(
                     Carrera(
+                        id = 0,
                         nombre = nombre,
-                        duracion = duracion,
-                        facultadId = facultadId
-                    )
+                        anioInicio = anioInicio,
+                        acreditada = acreditada,
+                        creditosTotales = creditosTotales,
+                        mensualidad = mensualidad
+                    ),
+                    facultadId
                 )
                 refreshData()
             }
+        }
+    }
+
+    private fun refreshData() {
+        lifecycleScope.launch {
+            val carreras = viewModel.getCarreras()
+            adapter.submitList(carreras)
         }
     }
 

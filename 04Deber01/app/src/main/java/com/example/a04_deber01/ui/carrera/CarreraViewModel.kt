@@ -13,16 +13,15 @@ class CarreraViewModel(
 
     suspend fun getCarreras() = repository.getCarrerasByFacultad(facultadId)
 
-    fun insertCarrera(carrera: Carrera) = viewModelScope.launch {
-        // Asegurarnos de que se asocia la carrera al facultadId correcto
-        repository.insertCarrera(carrera.copy(facultadId = facultadId))
+    fun insertCarrera(carrera: Carrera, facultadId: Int) = viewModelScope.launch {
+        repository.insertCarrera(carrera, facultadId)
     }
 
-    fun updateCarrera(carrera: Carrera) = viewModelScope.launch {
-        repository.updateCarrera(carrera)
+    fun updateCarrera(carrera: Carrera, facultadId: Int) = viewModelScope.launch {
+        repository.updateCarrera(carrera, facultadId)
     }
 
-    fun deleteCarrera(carreraId: Int) = viewModelScope.launch {
-        repository.deleteCarrera(carreraId)
+    fun deleteCarrera(carreraId: Int, facultadId: Int) = viewModelScope.launch {
+        repository.deleteCarrera(carreraId, facultadId)
     }
 }
