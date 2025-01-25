@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CarreraDao {
-    // Cambia el retorno a Flow y quita suspend
+
     @Query("SELECT * FROM carreras WHERE facultad_id = :facultadId")
     fun getCarrerasByFacultad(facultadId: Int): Flow<List<Carrera>>
 
