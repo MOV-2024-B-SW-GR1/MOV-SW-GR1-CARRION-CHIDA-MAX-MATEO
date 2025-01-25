@@ -1,17 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_light"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp">
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnIrFacultad"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ir a Facultades" />
+        android:padding="16dp"
+        android:text="Ir a Facultades"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="end" />
 
 </LinearLayout>

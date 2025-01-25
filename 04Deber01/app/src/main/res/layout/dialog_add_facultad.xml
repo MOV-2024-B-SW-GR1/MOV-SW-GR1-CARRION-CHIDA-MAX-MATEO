@@ -1,27 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dialogAddFacultad"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/rounded_dialog_background"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etNombre"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de la Facultad" />
+        android:layout_marginBottom="16dp"
+        app:startIconDrawable="@drawable/ic_business">
 
-    <EditText
-        android:id="@+id/etUbicacion"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la Facultad"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ubicación" />
+        android:layout_marginBottom="16dp"
+        app:startIconDrawable="@drawable/ic_location">
 
-    <EditText
-        android:id="@+id/etFecha"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUbicacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ubicación"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Fecha de creación" />
+        app:startIconDrawable="@drawable/ic_calendar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de creación"
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </LinearLayout>

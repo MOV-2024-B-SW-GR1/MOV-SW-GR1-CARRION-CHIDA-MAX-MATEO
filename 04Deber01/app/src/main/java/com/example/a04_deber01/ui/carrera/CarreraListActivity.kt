@@ -71,7 +71,6 @@ class CarreraListActivity : AppCompatActivity() {
 
     private fun setupFab() {
         binding.fabCarrera.setOnClickListener {
-            // Diálogo para crear una nueva Carrera
             showCarreraDialog(
                 context = this
             ) { nombre, duracion ->

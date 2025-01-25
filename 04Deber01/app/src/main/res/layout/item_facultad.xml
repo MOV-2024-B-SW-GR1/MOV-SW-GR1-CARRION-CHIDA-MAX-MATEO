@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardElevation="4dp">
+    android:layout_margin="12dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="12dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,46 +14,73 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Nombre de la facultad -->
         <TextView
             android:id="@+id/tvNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_business"
+            android:drawablePadding="8dp"
+            android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <!-- Ubicación de la facultad -->
         <TextView
             android:id="@+id/tvUbicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_location"
+            android:drawablePadding="8dp"
+            android:textColor="@color/text_secondary"
             android:textSize="14sp" />
 
+        <!-- Fecha de creación -->
         <TextView
             android:id="@+id/tvFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="8dp"
+            android:textColor="@color/text_secondary"
             android:textSize="12sp" />
 
+        <!-- Botones de Editar y Eliminar -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
 
-            <Button
+            <!-- Botón Editar -->
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
-                android:text="Editar" />
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="8dp"
+                android:text="Editar"
+                android:textColor="@color/button_text"
+                app:backgroundTint="@color/button_background"
+                app:cornerRadius="8dp" />
 
-            <Button
+            <!-- Botón Eliminar -->
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnDelete"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Eliminar" />
+                android:drawableStart="@drawable/ic_delete"
+                android:drawablePadding="8dp"
+                android:text="Eliminar"
+                android:textColor="@color/error_text"
+                app:backgroundTint="@color/error_color"
+                app:cornerRadius="8dp" />
         </LinearLayout>
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

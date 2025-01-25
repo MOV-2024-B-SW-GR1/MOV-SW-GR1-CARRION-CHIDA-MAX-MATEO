@@ -1,22 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/dialogAddCarrera"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/rounded_dialog_background"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etNombreCarrera"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de la Carrera" />
+        android:layout_marginBottom="16dp"
+        app:startIconDrawable="@drawable/ic_school">
 
-    <EditText
-        android:id="@+id/etDuracionCarrera"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombreCarrera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre de la Carrera"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Duración (años)"
-        android:inputType="number" />
+        app:startIconDrawable="@drawable/ic_timer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDuracionCarrera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Duración (años)"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </LinearLayout>

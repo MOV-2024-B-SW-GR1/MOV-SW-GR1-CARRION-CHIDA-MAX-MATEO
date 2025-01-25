@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#1565C0</color>       <!-- Azul oscuro principal -->
-    <color name="colorPrimaryVariant">#0D47A1</color>
-    <color name="colorAccent">#2196F3</color>        <!-- Azul intermedio -->
-    <color name="colorOnPrimary">#FFFFFF</color>     <!-- Blanco, para texto sobre azul -->
-    <color name="colorBackground">#FFFFFF</color>    <!-- Fondo de la app -->
-    <color name="colorSurface">#F5F5F5</color>       <!-- Otra tonalidad clara -->
-    <color name="colorError">#B00020</color>         <!-- Color de error (rojo) -->
-
-    <!-- Para texto / iconos -->
-    <color name="colorTextPrimary">#212121</color>
-    <color name="colorTextSecondary">#757575</color>
+    <color name="background_light">#FFFFFF</color> <!-- Fondo blanco -->
+    <color name="primary_color">#1565C0</color> <!-- Azul primario -->
+    <color name="text_primary">#212121</color> <!-- Texto oscuro -->
+    <color name="text_secondary">#757575</color> <!-- Texto gris -->
+    <color name="button_background">#1565C0</color> <!-- Fondo del botón -->
+    <color name="button_text">#FFFFFF</color> <!-- Texto del botón -->
+    <color name="error_color">#B00020</color> <!-- Fondo del botón de error -->
+    <color name="error_text">#FFFFFF</color> <!-- Texto del botón de error -->
 </resources>
+
