@@ -52,6 +52,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
+
 
 
     // Retrofit para llamadas HTTP y Gson para la conversión JSON

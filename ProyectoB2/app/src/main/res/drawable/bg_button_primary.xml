@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selector de fondo para el botón principal con efecto presionado -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Estado presionado -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#005BB5" /> <!-- Un azul más oscuro -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Estado normal -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#007AFF" /> <!-- Azul característico de Apple -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</selector>

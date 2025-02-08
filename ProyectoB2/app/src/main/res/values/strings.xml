@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProyectoB2</string>
+    <!-- Agrega este string con el client_id que aparece en google-services.json -->
+    <string name="default_web_client_id">687994620696-12575u1635hu706hg8gdp29ck9r7j27k.apps.googleusercontent.com</string>
 </resources>
