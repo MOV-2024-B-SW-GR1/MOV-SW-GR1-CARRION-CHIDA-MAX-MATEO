@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ChatGPTRepository {
     // Reemplaza "YOUR_OPENAI_API_KEY" por tu API key real de OpenAI
-    private const val API_KEY = "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"
+    private const val API_KEY = "xdxd"
     // Asegúrate de que el BASE_URL contenga "v1/" o ajusta el endpoint en la interfaz
     private const val BASE_URL = "https://api.openai.com/"
 
