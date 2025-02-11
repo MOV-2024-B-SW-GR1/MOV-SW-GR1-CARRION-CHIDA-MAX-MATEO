@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">A04_deber01</string>
+
+    <!-- Agrega estas dos cadenas que están faltando -->
+    <string name="add_facultad">Añadir Facultad</string>
+    <string name="add_carrera">Añadir Carrera</string>
+</resources>
